@@ -1,8 +1,8 @@
 {
-  "name": "wicadu-desing-web",
-  "version": "0.1.0",
-  "description": "UI library to sistem desing wicadu",
-  "main": "index.js",
+  "name": "@wicadu/wicadu-design-web",
+  "version": "0.1.3",
+  "description": "UI library to sistem design wicadu web",
+  "main": "index.d.ts",
   "files": [
     "atoms",
     "molecules",
@@ -11,17 +11,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wicadu/wicadu-design-jsx"
+    "url": "git+https://github.com/wicadu/wicadu-design-jsx.git"
   },
   "scripts": {
-    "build:babel": "babel dist -d dist && mv dist/* ./",
-    "rmFolders": "rm -rf dist && rm -rf atoms && rm -rf molecules",
-    "build:ts": "npm run rmFolders && tsc -p tsconfig.json",
-    "build": "npm run build:ts && npm run build:babel",
+    "storybook": "start-storybook",
+    "test": "jest --colors --logHeapUsage --updateSnapshot",
+    "coverage": "jest --coverage --colors",
+    "build": "npm run build:rmts && babel dist -d dist",
+    "build:rmts": "rm -rf dist && rm -rf atoms && rm -rf molecules && tsc -p tsconfig.json",
     "build:storybook": "build-storybook -o ./build"
   },
   "author": "Wicadu",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/wicadu/wicadu-design-jsx/blob/master/README.md",
   "peerDependencies": {
     "react": "^16.14.0",
@@ -65,5 +66,15 @@
     "@types/react": "^16.9.52",
     "babel-loader": "^8.1.0",
     "typescript": "^4.0.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/wicadu/wicadu-design-jsx/issues"
+  },
+  "keywords": [
+    "react",
+    "web",
+    "ui",
+    "design-system",
+    "wicadu"
+  ]
 }
