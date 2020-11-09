@@ -14,6 +14,34 @@ var _styles = _interopRequireDefault(require("./styles"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // styles
+var propTypes = {
+  placeholder: _propTypes.default.string,
+  borderColor: _propTypes.default.string,
+  className: _propTypes.default.string,
+  fontSize: _propTypes.default.number,
+  onChange: _propTypes.default.func.isRequired,
+  disabled: _propTypes.default.bool,
+  rounded: _propTypes.default.number,
+  dataSet: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
+  value: _propTypes.default.string,
+  type: _propTypes.default.oneOf(['password', 'number', 'text']),
+  height: _propTypes.default.number,
+  name: _propTypes.default.string
+};
+var defaultProps = {
+  placeholder: '',
+  borderColor: 'transparent',
+  className: '',
+  disabled: false,
+  value: '',
+  fontSize: 16,
+  rounded: 15,
+  dataSet: '',
+  type: 'text',
+  height: 15,
+  name: null
+};
+
 var Input = function Input(props) {
   function onChangeHandle(event) {
     event.persist();
@@ -29,59 +57,30 @@ var Input = function Input(props) {
       borderColor = props.borderColor,
       className = props.className,
       disabled = props.disabled,
-      textSize = props.textSize,
+      fontSize = props.fontSize,
       dataSet = props.dataSet,
       rounded = props.rounded,
       value = props.value,
-      size = props.size,
+      height = props.height,
       type = props.type,
-      name = props.name,
-      id = props.id;
+      name = props.name;
   return /*#__PURE__*/_react.default.createElement(_styles.default, {
     borderColor: borderColor,
     placeholder: placeholder,
     className: className,
     onChange: onChangeHandle,
-    textSize: textSize,
+    fontSize: fontSize,
     disabled: disabled,
     "data-id": dataSet,
     rounded: rounded,
     value: value,
     name: name,
     type: type,
-    size: size,
-    id: id
+    height: height
   });
 };
 
-Input.propTypes = {
-  placeholder: _propTypes.default.string,
-  borderColor: _propTypes.default.string,
-  className: _propTypes.default.string,
-  textSize: _propTypes.default.number,
-  onChange: _propTypes.default.func.isRequired,
-  disabled: _propTypes.default.bool,
-  rounded: _propTypes.default.number,
-  dataSet: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
-  value: _propTypes.default.string,
-  type: _propTypes.default.oneOf(['password', 'number', 'email', 'color', 'text', 'date']),
-  size: _propTypes.default.number,
-  id: _propTypes.default.string,
-  name: _propTypes.default.string
-};
-Input.defaultProps = {
-  placeholder: '',
-  borderColor: '',
-  className: '',
-  disabled: false,
-  value: '',
-  textSize: 16,
-  rounded: 0,
-  dataSet: '',
-  type: 'text',
-  size: 24,
-  id: '',
-  name: null
-};
+Input.propTypes = propTypes;
+Input.defaultProps = defaultProps;
 var _default = Input;
 exports.default = _default;

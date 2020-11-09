@@ -21,18 +21,18 @@ var __makeTemplateObject = void 0 && (void 0).__makeTemplateObject || function (
   return cooked;
 };
 
-var InputWrapper = _styledComponents.default.input(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  padding: 8px 16px;\n  width: 100%;\n  font-size: ", ";\n  height: ", ";\n  border: 1px solid ", ";\n  ", "\n\n  &:disabled,\n  &[disabled] {\n    background-color: #9c9a9f;\n    cursor: not-allowed;\n    color: #808080;\n  }\n"], ["\n  padding: 8px 16px;\n  width: 100%;\n  font-size: ", ";\n  height: ", ";\n  border: 1px solid ", ";\n  ", "\n\n  &:disabled,\n  &[disabled] {\n    background-color: #9c9a9f;\n    cursor: not-allowed;\n    color: #808080;\n  }\n"])), function (_a) {
-  var textSize = _a.textSize;
-  return textSize + "px";
+var InputWrapper = _styledComponents.default.input(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  font-size: ", ";\n  width: 100%;\n  height: ", ";\n  padding: 20px 17px;\n  margin: 10px;\n  border: 1px solid ", ";\n  border-radius: ", ";\n  outline: none;\n\n  &:disabled,\n  &[disabled] {\n    background-color: #9c9a9f;\n    cursor: not-allowed;\n    color: #808080;\n  }\n"], ["\n  font-size: ", ";\n  width: 100%;\n  height: ", ";\n  padding: 20px 17px;\n  margin: 10px;\n  border: 1px solid ", ";\n  border-radius: ", ";\n  outline: none;\n\n  &:disabled,\n  &[disabled] {\n    background-color: #9c9a9f;\n    cursor: not-allowed;\n    color: #808080;\n  }\n"])), function (_a) {
+  var fontSize = _a.fontSize;
+  return fontSize + "px";
 }, function (_a) {
-  var size = _a.size;
-  return size + "px";
+  var height = _a.height;
+  return height + "px";
 }, function (_a) {
   var borderColor = _a.borderColor;
   return borderColor;
 }, function (_a) {
   var rounded = _a.rounded;
-  return rounded && "border-radius: " + rounded + "px";
+  return rounded + "px";
 });
 
 var _default = InputWrapper;
