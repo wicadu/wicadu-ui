@@ -1,15 +1,44 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 // styles
-import InputWrapper from './styles';
+import InputWrapper from './styles'
+
+const propTypes = {
+  placeholder: PropTypes.string,
+  borderColor: PropTypes.string,
+  className: PropTypes.string,
+  fontSize: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+  rounded: PropTypes.number,
+  dataSet: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.string,
+  type: PropTypes.oneOf(['password', 'number', 'text']),
+  height: PropTypes.number,
+  name: PropTypes.string,
+}
+
+const defaultProps = {
+  placeholder: '',
+  borderColor: 'transparent',
+  className: '',
+  disabled: false,
+  value: '',
+  fontSize: 16,
+  rounded: 15,
+  dataSet: '',
+  type: 'text',
+  height: 15,
+  name: null,
+}
 
 const Input = (props) => {
   function onChangeHandle(event) {
-    event.persist();
-    const { disabled, onChange } = props;
+    event.persist()
+    const { disabled, onChange } = props
 
     if (!disabled) {
-      onChange(event);
+      onChange(event)
     }
   }
 
@@ -18,15 +47,14 @@ const Input = (props) => {
     borderColor,
     className,
     disabled,
-    textSize,
+    fontSize,
     dataSet,
     rounded,
     value,
-    size,
+    height,
     type,
     name,
-    id,
-  } = props;
+  } = props
 
   return (
     <InputWrapper
@@ -34,48 +62,19 @@ const Input = (props) => {
       placeholder={placeholder}
       className={className}
       onChange={onChangeHandle}
-      textSize={textSize}
+      fontSize={fontSize}
       disabled={disabled}
       data-id={dataSet}
       rounded={rounded}
       value={value}
       name={name}
       type={type}
-      size={size}
-      id={id}
+      height={height}
     />
-  );
-};
+  )
+}
 
-Input.propTypes = {
-  placeholder: PropTypes.string,
-  borderColor: PropTypes.string,
-  className: PropTypes.string,
-  textSize: PropTypes.number,
-  onChange: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
-  rounded: PropTypes.number,
-  dataSet: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  value: PropTypes.string,
-  type: PropTypes.oneOf(['password', 'number', 'email', 'color', 'text', 'date']),
-  size: PropTypes.number,
-  id: PropTypes.string,
-  name: PropTypes.string,
-};
+Input.propTypes = propTypes
+Input.defaultProps = defaultProps
 
-Input.defaultProps = {
-  placeholder: '',
-  borderColor: '',
-  className: '',
-  disabled: false,
-  value: '',
-  textSize: 16,
-  rounded: 0,
-  dataSet: '',
-  type: 'text',
-  size: 24,
-  id: '',
-  name: null,
-};
-
-export default Input;
+export default Input

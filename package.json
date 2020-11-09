@@ -1,6 +1,6 @@
 {
   "name": "@wicadu/ui-design-jsx",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "UI library to sistem design wicadu jsx",
   "main": "dist/index.js",
   "files": [
@@ -60,7 +60,7 @@
     "@storybook/addon-docs": "^6.0.26",
     "@storybook/addon-links": "^6.0.26",
     "@storybook/addons": "^6.0.26",
-    "@storybook/react": "^6.0.26",
+    "@storybook/react": "^6.0.28",
     "@types/react": "^16.9.52",
     "babel-loader": "^8.1.0",
     "typescript": "^4.0.3"

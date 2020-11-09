@@ -1,12 +1,14 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const InputWrapper = styled.input`
-  padding: 8px 16px;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
   width: 100%;
-  font-size: ${({ textSize }) => `${textSize}px`};
-  height: ${({ size }) => `${size}px`};
+  height: ${({ height }) => `${height}px`};
+  padding: 20px 17px;
+  margin: 10px;
   border: 1px solid ${({ borderColor }) => borderColor};
-  ${({ rounded }) => rounded && `border-radius: ${rounded}px`}
+  border-radius: ${({ rounded }) => `${rounded}px`};
+  outline: none;
 
   &:disabled,
   &[disabled] {
@@ -14,6 +16,6 @@ const InputWrapper = styled.input`
     cursor: not-allowed;
     color: #808080;
   }
-`;
+`
 
-export default InputWrapper;
+export default InputWrapper
