@@ -1,14 +1,17 @@
-import styled from 'styled-components';
-import { darken } from 'polished';
+import styled from 'styled-components'
+import { darken } from 'polished'
 
 const Wrapper = styled.button`
-  border-radius: 4px;
+  border-radius: 15px;
   line-height: 24px;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   height: 48px;
   border: 0;
+  padding: ${({ padding }) => padding};
+  margin: ${({ margin }) => margin};
+  width: ${({ width }) => `${width}` || 'auto'};
   
   ${({ asTextLink }) =>
     !asTextLink &&
@@ -16,9 +19,6 @@ const Wrapper = styled.button`
     padding: 12px 24px;
     filter: drop-shadow(0 2px 2px rgba(187, 188, 188, 0.35));
   `}
-
-  ${({ fullWidth, width }) =>
-    fullWidth ? 'width: 100%;' : `width: ${width ? `${width}px;` : 'auto;'}`}
 
   ${({ bgColor, asTextLink, inverse, color }) => {
     return inverse
@@ -55,6 +55,6 @@ const Wrapper = styled.button`
     background-color: #d6d0d5;
     cursor: not-allowed;
   }
-`;
+`
 
-export default Wrapper;
+export default Wrapper
