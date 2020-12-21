@@ -1,1 +1,1 @@
-# wicadu-design-jsx
+# wicadu-ui
