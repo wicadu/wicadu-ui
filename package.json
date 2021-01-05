@@ -1,14 +1,14 @@
 {
-  "name": "@wicadu/ui-design-jsx",
-  "version": "0.1.0",
-  "description": "UI library to sistem design wicadu jsx",
+  "name": "@wicadu/ui",
+  "version": "1.0.0",
+  "description": "UI library to sistem design wicadu",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wicadu/wicadu-design-jsx.git"
+    "url": "git+https://github.com/wicadu/wicadu-ui.git"
   },
   "scripts": {
     "storybook": "start-storybook",
@@ -21,7 +21,7 @@
   },
   "author": "Wicadu",
   "license": "MIT",
-  "homepage": "https://github.com/wicadu/wicadu-design-jsx/blob/master/README.md",
+  "homepage": "https://github.com/wicadu/wicadu-ui/blob/master/README.md",
   "peerDependencies": {
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
@@ -66,7 +66,7 @@
     "typescript": "^4.0.3"
   },
   "bugs": {
-    "url": "https://github.com/wicadu/wicadu-design-jsx/issues"
+    "url": "https://github.com/wicadu/wicadu-ui/issues"
   },
   "keywords": [
     "react",
