@@ -1,8 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-
-import Button from '../atoms/Button';
-
+import React from 'react'
+import Button from '../atoms/Button'
 
 export const Basic = () => (
   <>
@@ -12,18 +9,18 @@ export const Basic = () => (
 
 export const BackgroundColor = () => (
   <>
-    <Button bgColor="blue">bgColor: blue</Button>
+    <Button bgColor='blue'>bgColor: blue</Button>
     <br />
     <br />
-    <Button bgColor="red">bgColor: red</Button>
+    <Button bgColor='red'>bgColor: red</Button>
     <br />
     <br />
-    <Button bgColor="red" color="white">
+    <Button bgColor='red' color='white'>
       color: white
     </Button>
     <br />
     <br />
-    <Button bgColor="green" color="#fff">
+    <Button bgColor='green' color='#fff'>
       color: #fff
     </Button>
   </>
@@ -31,28 +28,28 @@ export const BackgroundColor = () => (
 
 export const Sizes = () => (
   <>
-    <Button fullWidth>fullWidth / 450px</Button>
+    <Button>fullWidth / 450px</Button>
     <br />
     <br />
     <div style={{ width: '450px' }}>
-      <Button fullWidth>fullWidth / 450px</Button>
+      <Button>fullWidth / 450px</Button>
     </div>
     <br />
     <br />
     <div style={{ width: '150px' }}>
-      <Button fullWidth>fullWidth / 150px</Button>
+      <Button>fullWidth / 150px</Button>
     </div>
   </>
 )
 
 export const Inverse = () => (
   <>
-    <Button bgColor="blue" color="white">
+    <Button bgColor='blue' color='white'>
       (no) inverse
     </Button>
     <br />
     <br />
-    <Button inverse bgColor="blue" color="white">
+    <Button inverse bgColor='blue' color='white'>
       Inverse
     </Button>
   </>
@@ -60,12 +57,12 @@ export const Inverse = () => (
 
 export const AsTextLink = () => (
   <>
-    <Button asTextLink bgColor="red" color="red">
+    <Button asTextLink bgColor='red' color='red'>
       Icon Left
     </Button>
     <br />
     <br />
-    <Button asTextLink bgColor="red" color="red">
+    <Button asTextLink bgColor='red' color='red'>
       pagar cuota participacion Icon right
     </Button>
   </>
