@@ -19,7 +19,7 @@
     "build": "npm run build:ts && npm run build:babel",
     "build:storybook": "build-storybook -o ./build"
   },
-  "author": "Wicadu",
+  "author": "wicadu <https://wicadu.com>",
   "license": "MIT",
   "homepage": "https://github.com/wicadu/wicadu-ui/blob/master/README.md",
   "peerDependencies": {
