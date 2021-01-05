@@ -14,9 +14,8 @@
     "storybook": "start-storybook",
     "test": "jest --colors --logHeapUsage --updateSnapshot",
     "coverage": "jest --coverage --colors",
-    "build:babel": "babel dist -d dist",
-    "build:ts": "rm -rf dist && tsc -p tsconfig.json",
-    "build": "npm run build:ts && npm run build:babel",
+    "build:babel": "babel src -d dist",
+    "build": "rm -rf dist && npm run build:babel",
     "build:storybook": "build-storybook -o ./build"
   },
   "author": "wicadu <https://wicadu.com>",
@@ -35,7 +34,7 @@
   "babel": {
     "presets": [
       "@babel/preset-env",
-      "@babel/preset-react"
+      "@babel/preset-typescript"
     ]
   },
   "browserslist": {
@@ -54,7 +53,7 @@
   "devDependencies": {
     "@babel/cli": "^7.12.0",
     "@babel/preset-env": "^7.12.0",
-    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.12.7",
     "@babel/types": "^7.12.0",
     "@sambego/storybook-state": "^2.0.1",
     "@storybook/addon-actions": "^6.0.26",
