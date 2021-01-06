@@ -1,12 +1,11 @@
-import React from 'react';
-import { State, Store } from '@sambego/storybook-state';
-
+import React from 'react'
+import { State, Store } from '@sambego/storybook-state'
 import Input from '../atoms/Input'
 
 export const Basic = () => {
   const store = new Store({
     value: '',
-  });
+  })
 
   return (
     <div style={{ width: 300 }}>
@@ -20,29 +19,26 @@ export const Basic = () => {
 export const BoxSize = () => {
   const store = new Store({
     value: '',
-  });
+  })
 
   return (
     <div style={{ width: 300 }}>
       <State store={store}>
         <Input
-          placeholder="Type something!"
-          size={48}
+          placeholder='Type something!'
           onChange={(event) => store.set({ value: event.target.value })}
           key={1}
         />
         <br />
         <Input
-          placeholder="Type something!"
+          placeholder='Type something!'
           onChange={(event) => store.set({ value: event.target.value })}
-          size={54}
           key={2}
         />
         <br />
         <Input
-          placeholder="Type something!"
+          placeholder='Type something!'
           onChange={(event) => store.set({ value: event.target.value })}
-          size={60}
           key={3}
         />
       </State>
@@ -53,29 +49,26 @@ export const BoxSize = () => {
 export const TextSize = () => {
   const store = new Store({
     value: '',
-  });
+  })
 
   return (
     <div style={{ width: 300 }}>
       <State store={store}>
         <Input
-          placeholder="Type something!"
-          textSize={12}
+          placeholder='Type something!'
           onChange={(event) => store.set({ value: event.target.value })}
           key={4}
         />
         <br />
         <Input
-          placeholder="Type something!"
+          placeholder='Type something!'
           onChange={(event) => store.set({ value: event.target.value })}
-          textSize={18}
           key={5}
         />
         <br />
         <Input
-          placeholder="Type something!"
+          placeholder='Type something!'
           onChange={(event) => store.set({ value: event.target.value })}
-          textSize={24}
           key={6}
         />
       </State>
@@ -86,30 +79,30 @@ export const TextSize = () => {
 export const Border = () => {
   const store = new Store({
     value: '',
-  });
+  })
 
   return (
     <div style={{ width: 300 }}>
       <State store={store}>
         <Input
-          placeholder="Type something!"
-          borderColor="gold"
+          placeholder='Type something!'
+          borderColor='gold'
           rounded={5}
           onChange={(event) => store.set({ value: event.target.value })}
           key={7}
         />
         <br />
         <Input
-          placeholder="Type something!"
-          borderColor="blue"
+          placeholder='Type something!'
+          borderColor='blue'
           rounded={8}
           onChange={(event) => store.set({ value: event.target.value })}
           key={8}
         />
         <br />
         <Input
-          placeholder="Type something!"
-          borderColor="green"
+          placeholder='Type something!'
+          borderColor='green'
           rounded={12}
           onChange={(event) => store.set({ value: event.target.value })}
           key={9}

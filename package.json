@@ -1,41 +1,35 @@
 {
-  "name": "@wicadu/ui-design-jsx",
-  "version": "0.1.0",
-  "description": "UI library to sistem design wicadu jsx",
+  "name": "@wicadu/ui",
+  "version": "1.0.0",
+  "description": "UI library to sistem design wicadu",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wicadu/wicadu-design-jsx.git"
+    "url": "git+https://github.com/wicadu/wicadu-ui.git"
   },
   "scripts": {
     "storybook": "start-storybook",
     "test": "jest --colors --logHeapUsage --updateSnapshot",
     "coverage": "jest --coverage --colors",
-    "build:babel": "babel dist -d dist",
-    "build:ts": "rm -rf dist && tsc -p tsconfig.json",
-    "build": "npm run build:ts && npm run build:babel",
+    "build:babel": "babel ./src --out-dir dist --extensions .ts,.tsx",
+    "build": "rm -rf dist && npm run build:babel",
     "build:storybook": "build-storybook -o ./build"
   },
-  "author": "Wicadu",
+  "author": "wicadu <https://wicadu.com>",
   "license": "MIT",
-  "homepage": "https://github.com/wicadu/wicadu-design-jsx/blob/master/README.md",
+  "homepage": "https://github.com/wicadu/wicadu-ui/blob/master/README.md",
   "peerDependencies": {
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },
   "dependencies": {
+    "polished": "^4.0.3",
     "prop-types": "^15.7.2",
-    "styled-components": "^5.2.0",
-    "polished": "^4.0.3"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
+    "react-hook-form": "^6.14.0",
+    "styled-components": "^5.2.0"
   },
   "browserslist": {
     "production": [
@@ -53,7 +47,8 @@
   "devDependencies": {
     "@babel/cli": "^7.12.0",
     "@babel/preset-env": "^7.12.0",
-    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
     "@babel/types": "^7.12.0",
     "@sambego/storybook-state": "^2.0.1",
     "@storybook/addon-actions": "^6.0.26",
@@ -66,7 +61,7 @@
     "typescript": "^4.0.3"
   },
   "bugs": {
-    "url": "https://github.com/wicadu/wicadu-design-jsx/issues"
+    "url": "https://github.com/wicadu/wicadu-ui/issues"
   },
   "keywords": [
     "react",
