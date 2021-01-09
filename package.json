@@ -22,12 +22,12 @@
   "license": "MIT",
   "homepage": "https://github.com/wicadu/wicadu-ui/blob/master/README.md",
   "peerDependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },
   "dependencies": {
     "polished": "^4.0.3",
-    "prop-types": "^15.7.2",
     "react-hook-form": "^6.14.0",
     "styled-components": "^5.2.0"
   },
@@ -50,6 +50,8 @@
     "@babel/preset-react": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
     "@babel/types": "^7.12.0",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@sambego/storybook-state": "^2.0.1",
     "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-docs": "^6.0.26",
