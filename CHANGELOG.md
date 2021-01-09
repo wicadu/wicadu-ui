@@ -1,3 +1,7 @@
+# 1.0.3
+
+- Update Button and remove styled-components
+
 # 1.0.2
 
 - Add Control to Input with React Hook Form
