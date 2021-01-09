@@ -1,3 +1,7 @@
+# 1.0.2
+
+- Add Control to Input with React Hook Form
+
 # 1.0.1
 
 - Fix: Add Form Element to Form HOC
