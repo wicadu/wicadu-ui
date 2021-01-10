@@ -1,6 +1,6 @@
 {
   "name": "@wicadu/ui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "UI library to sistem design wicadu",
   "main": "dist/index.js",
   "files": [
@@ -15,6 +15,7 @@
     "test": "jest --colors --logHeapUsage --updateSnapshot",
     "coverage": "jest --coverage --colors",
     "build:babel": "babel ./src --out-dir dist --extensions .ts,.tsx",
+    "dev": "npm run build:babel -- -w",
     "build": "rm -rf dist && npm run build:babel",
     "build:storybook": "build-storybook -o ./build"
   },

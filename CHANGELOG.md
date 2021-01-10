@@ -1,3 +1,7 @@
+# 1.0.4
+
+- Add Type Link to Button and Add Script for Development
+
 # 1.0.3
 
 - Update Button and remove styled-components
