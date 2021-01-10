@@ -11,13 +11,14 @@
     "url": "git+https://github.com/wicadu/wicadu-ui.git"
   },
   "scripts": {
+    "dev": "npm run build:babel -- -w",
     "storybook": "start-storybook",
     "test": "jest --colors --logHeapUsage --updateSnapshot",
     "coverage": "jest --coverage --colors",
     "build:babel": "babel ./src --out-dir dist --extensions .ts,.tsx",
-    "dev": "npm run build:babel -- -w",
     "build": "rm -rf dist && npm run build:babel",
-    "build:storybook": "build-storybook -o ./build"
+    "build:storybook": "build-storybook -o ./build",
+    "deploy": "npm run build && npm publish --access=public"
   },
   "author": "wicadu <https://wicadu.com>",
   "license": "MIT",
