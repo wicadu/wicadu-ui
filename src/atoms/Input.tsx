@@ -34,6 +34,6 @@ function Input ({ className, label, name, ...props }: Props) {
 const WrapperInput = styled(Input)``
 
 Input.propTypes = propTypes
-Input.defaultProps = defaultProps
+WrapperInput.defaultProps = defaultProps
 
 export default WrapperInput

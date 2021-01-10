@@ -69,7 +69,7 @@ const WrapperSpin = styled(Spin)`
   }
 `
 
-WrapperSpin.propTypes = propTypes
+Spin.propTypes = propTypes
 WrapperSpin.defaultProps = defaultProps
 
 export default WrapperSpin
