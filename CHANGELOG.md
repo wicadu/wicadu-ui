@@ -1,3 +1,7 @@
+# 1.0.6
+
+- Fix Default Props and Add Script Deploy
+
 # 1.0.5
 
 - Add Spin Atom
