@@ -43,7 +43,7 @@ const WrapperButton = styled(Button)`
 `
 
 Button.propTypes = propTypes
-Button.defaultProps = defaultProps
+WrapperButton.defaultProps = defaultProps
 
 Button.htmlType = htmlType
 
