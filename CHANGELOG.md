@@ -1,3 +1,7 @@
+# 1.0.5
+
+- Add Spin Atom
+
 # 1.0.4
 
 - Add Type Link to Button and Add Script for Development
