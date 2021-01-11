@@ -31,7 +31,20 @@ function Input ({ className, label, name, ...props }: Props) {
   )
 }
 
-const WrapperInput = styled(Input)``
+const WrapperInput = styled(Input)`
+  & {
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      display: none;
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+`
 
 Input.propTypes = propTypes
 WrapperInput.defaultProps = defaultProps
