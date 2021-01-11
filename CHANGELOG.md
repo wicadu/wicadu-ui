@@ -1,3 +1,7 @@
+# 1.0.7
+
+- Add styles for remove arrows of input:type=number
+
 # 1.0.6
 
 - Fix Default Props and Add Script Deploy
