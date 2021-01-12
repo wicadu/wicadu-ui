@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import styled from '@emotion/styled'
 import PropTypes, { InferProps } from 'prop-types'
+import Spin from './Spin'
 
 enum htmlType {
   button = 'button',
@@ -15,19 +16,26 @@ enum buttonType {
 const propTypes = {
   className: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   htmlType: PropTypes.oneOf<htmlType>([htmlType.button, htmlType.submit, htmlType.reset]),
-  type: PropTypes.oneOf<buttonType>([buttonType.link])
+  type: PropTypes.oneOf<buttonType>([buttonType.link]),
+  loading: PropTypes.bool,
+  disabled: PropTypes.bool
 }
 
 type Props = InferProps<typeof propTypes>
 
 const defaultProps: Props = {
-  htmlType: htmlType.button
+  htmlType: htmlType.button,
+  onClick () {}
 }
 
-function Button ({ className, children, htmlType, onClick, ...props }: Props) {
-  return <button className={className} onClick={onClick} {...props} type={htmlType}>{children}</button>
+function Button ({ className, children, htmlType, loading, disabled, ...props }: Props) {
+  const isDisabled = useMemo(() => loading || disabled, [loading, disabled])
+
+  return (
+    <button className={className} {...props} type={htmlType} disabled={isDisabled}>{loading ? <Spin /> : children}</button>
+  )
 }
 
 const WrapperButton = styled(Button)`

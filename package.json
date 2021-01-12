@@ -1,6 +1,6 @@
 {
   "name": "@wicadu/ui",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "UI library to sistem design wicadu",
   "main": "dist/index.js",
   "files": [
