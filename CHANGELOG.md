@@ -1,3 +1,7 @@
+# 1.0.8
+
+- Add Typography atom
+
 # 1.0.7
 
 - Add styles for remove arrows of input:type=number
