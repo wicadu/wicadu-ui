@@ -1,3 +1,7 @@
+# 1.0.9
+
+- Add logic for loading and disabled to Button atom
+
 # 1.0.8
 
 - Add Typography atom
