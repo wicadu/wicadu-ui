@@ -3,70 +3,36 @@ import Button from '../atoms/Button'
 
 export const Basic = () => (
   <>
-    <Button>Click!</Button>
+    <Button>Click me!</Button>
   </>
 )
 
-export const BackgroundColor = () => (
+export const Types = () => (
   <>
-    <Button bgColor='blue'>bgColor: blue</Button>
-    <br />
-    <br />
-    <Button bgColor='red'>bgColor: red</Button>
-    <br />
-    <br />
-    <Button bgColor='red' color='white'>
-      color: white
-    </Button>
-    <br />
-    <br />
-    <Button bgColor='green' color='#fff'>
-      color: #fff
-    </Button>
-  </>
-)
-
-export const Sizes = () => (
-  <>
-    <Button>fullWidth / 450px</Button>
-    <br />
-    <br />
-    <div style={{ width: '450px' }}>
-      <Button>fullWidth / 450px</Button>
+    <div>
+      <p>Primary</p>
+      <Button type='primary'>Type: Primary</Button>
     </div>
-    <br />
-    <br />
-    <div style={{ width: '150px' }}>
-      <Button>fullWidth / 150px</Button>
+    <div>
+      <p>Ghost</p>
+      <Button type='ghost'>Type: Ghost</Button>
     </div>
   </>
 )
 
 export const Inverse = () => (
   <>
-    <Button bgColor='blue' color='white'>
-      (no) inverse
-    </Button>
-    <br />
-    <br />
-    <Button inverse bgColor='blue' color='white'>
-      Inverse
-    </Button>
+    <div>
+      <p>Primary inverse</p>
+      <Button type='primary' inverse>Type: Primary</Button>
+    </div>
+    <div>
+      <p>Ghost inverse</p>
+      <Button type='ghost' inverse>Type: Ghost</Button>
+    </div>
   </>
 )
 
-export const AsTextLink = () => (
-  <>
-    <Button asTextLink bgColor='red' color='red'>
-      Icon Left
-    </Button>
-    <br />
-    <br />
-    <Button asTextLink bgColor='red' color='red'>
-      pagar cuota participacion Icon right
-    </Button>
-  </>
-)
 
 export default {
   title: 'Button',
