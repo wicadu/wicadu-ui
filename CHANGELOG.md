@@ -1,3 +1,7 @@
+# 1.1.0
+
+- Add ButtonStyles and documentation with StoryBook
+
 # 1.0.9
 
 - Add logic for loading and disabled to Button atom
