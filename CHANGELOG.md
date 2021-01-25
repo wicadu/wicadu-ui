@@ -1,3 +1,7 @@
+# 1.1.1
+
+- Add color contant, addClass and getSizes utils
+
 # 1.1.0
 
 - Add ButtonStyles and documentation with StoryBook
