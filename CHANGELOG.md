@@ -1,3 +1,7 @@
+# 1.1.2
+
+- Add width in sizes prop and fullWidth to get 100% (Button)
+
 # 1.1.1
 
 - Add color contant, addClass and getSizes utils
