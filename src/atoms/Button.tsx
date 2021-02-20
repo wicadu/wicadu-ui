@@ -45,7 +45,8 @@ const propTypes = {
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
   asTextLink: PropTypes.bool,
-  inverse: PropTypes.bool
+  inverse: PropTypes.bool,
+  fullWidth: PropTypes.bool
 }
 
 type Props = InferProps<typeof propTypes>
@@ -93,10 +94,19 @@ const WrapperButton = styled(Button)`
       `
     }}
 
-    ${({ size }) => {
-      if (size === buttonSizes.small) return `height: 30px;`
-      if (size === buttonSizes.medium) return `height: 45px;`
-      if (size === buttonSizes.large) return `height: 55px;`
+    ${({ size, fullWidth }) => {
+      if (size === buttonSizes.small) return `
+        height: 35px;
+        width: ${fullWidth ? '100%' : '160px'};
+      `
+      if (size === buttonSizes.medium) return `
+        height: 42px;
+        width: ${fullWidth ? '100%' : '240px'};
+      `
+      if (size === buttonSizes.large) return `
+        height: 50px;
+        width: ${fullWidth ? '100%' : '300px'};
+      `
     }}
 
     ${({ disabled }) =>
