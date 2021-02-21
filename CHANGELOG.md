@@ -1,3 +1,7 @@
+# 1.1.5
+
+- Add Typography styles; sizes, weight, align, story documentation and defaultStyles
+
 # 1.1.4
 
 - Add types & outline styles (Input)
