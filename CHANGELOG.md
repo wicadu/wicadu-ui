@@ -1,3 +1,7 @@
+# 1.1.3
+
+- Add sizes, fullSizes and some default styles (Input)
+
 # 1.1.2
 
 - Add width in sizes prop and fullWidth to get 100% (Button)
