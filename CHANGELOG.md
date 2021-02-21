@@ -1,3 +1,7 @@
+# 1.1.4
+
+- Add types & outline styles (Input)
+
 # 1.1.3
 
 - Add sizes, fullSizes and some default styles (Input)

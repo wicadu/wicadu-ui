@@ -1,7 +1,13 @@
 import React from 'react'
-import Form from '../hocs/Form'
-import styled from '@emotion/styled'
 import PropTypes, { InferProps } from 'prop-types'
+import styled from '@emotion/styled'
+
+import Form from '../hocs/Form'
+import Colors from '../constants/colors'
+
+enum inputType {
+  primary = 'primary',
+}
 
 enum inputSizes {
   small = 'small',
@@ -10,34 +16,38 @@ enum inputSizes {
 }
 
 const propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  htmlType: PropTypes.string,
   name: PropTypes.string.isRequired,
-  type: PropTypes.string,
   validations: PropTypes.object,
   size: PropTypes.oneOf<inputSizes>([
     inputSizes.small,
     inputSizes.medium,
     inputSizes.large
   ]),
-  fullWidth: PropTypes.bool
+  fullWidth: PropTypes.bool,
+  type: PropTypes.oneOf<inputType>([
+    inputType.primary,
+  ])
 }
 
 type Props = InferProps<typeof propTypes>
 
 const defaultProps = {
-  type: 'text',
+  htmlType: 'text',
   size: inputSizes.small,
+  type: inputType.primary
 }
 
-function Input ({ className, label, name, ...props }: Props) {
+function Input ({ className, label, name, htmlType, ...props }: Props) {
   const { register, errors } = Form.useForm()
 
   return (
     <div className={className}>
       {label && <label htmlFor={name}>{label}</label>}
       <div>
-        <input ref={register} id={name} name={name} {...props} />
+        <input {...props} ref={register} id={name} name={name} type={htmlType} />
         {errors[name]?.message && <span>{errors[name].message}</span>}
       </div>
     </div>
@@ -57,6 +67,11 @@ const WrapperInput = styled(Input)`
       -moz-appearance: textfield;
     }
 
+    textarea:focus, input:focus {
+      outline: none;
+      box-shadow: 0 0 1px 1px ${() => Colors.lightGray};
+    }
+
     input {
       border-radius: 10px;
       padding: 5px 10px;
@@ -73,6 +88,12 @@ const WrapperInput = styled(Input)`
         if (size === inputSizes.large) return `
           height: 50px;
           width: ${fullWidth ? '100%' : '300px'};
+        `
+      }}
+
+      ${({ type }) => {
+        if (type === inputType.primary) return `
+          border: none;
         `
       }}
     }
