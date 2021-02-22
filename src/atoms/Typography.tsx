@@ -83,6 +83,8 @@ const Title4 = styled.h4`
 `
 const Default = styled.p`
   ${defaultStyles}
+  text-align: ${({ align }) => align};
+  font-weight: ${({ weight }) => weight};
 `
 
 Typography.propTypes = propTypes

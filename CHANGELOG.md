@@ -1,3 +1,7 @@
+# 1.1.6
+
+- Add aling and weight (Typography - default)
+
 # 1.1.5
 
 - Add Typography styles; sizes, weight, align, story documentation and defaultStyles
