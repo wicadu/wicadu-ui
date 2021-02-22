@@ -1,3 +1,7 @@
+# 1.1.8
+
+- Add new line height for description (Typography).
+
 # 1.1.7
 
 - Add description type (Typography).

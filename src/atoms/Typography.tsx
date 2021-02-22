@@ -88,6 +88,7 @@ const Default = styled.p`
 
   ${({ type }) => type === 'description' && `
     color: ${Colors.darkGray};
+    line-height: 1.30rem;
   `}
 `
 
