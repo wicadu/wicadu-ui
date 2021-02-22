@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 import styled from '@emotion/styled'
 
@@ -40,22 +40,23 @@ const defaultProps = {
   type: inputType.primary
 }
 
-function Input ({ className, label, name, htmlType, ...props }: Props) {
+function Input ({ label, name, htmlType, ...props }: Props) {
   const { register, errors } = Form.useForm()
+  const errorMessage = useMemo(() => errors?.[name]?.message, [errors, name])
 
   return (
-    <div className={className}>
+    <Wrapper {...props} error={Boolean(errorMessage)}>
       {label && <label htmlFor={name}>{label}</label>}
-      <div>
-        <input {...props} ref={register} id={name} name={name} type={htmlType} />
-        {errors[name]?.message && <span>{errors[name].message}</span>}
-      </div>
-    </div>
+      <input {...props} ref={register} id={name} name={name} type={htmlType} />
+       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+    </Wrapper>
   )
 }
 
-const WrapperInput = styled(Input)`
+const Wrapper = styled.div`
   & {
+    display: grid;
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       display: none;
@@ -73,7 +74,7 @@ const WrapperInput = styled(Input)`
     }
 
     input {
-      border-radius: 10px;
+      border-radius: 5px;
       padding: 5px 10px;
 
       ${({ size, fullWidth }) => {
@@ -96,11 +97,24 @@ const WrapperInput = styled(Input)`
           border: none;
         `
       }}
+
+      ${({ error }) => error && `
+          border: 1px solid ${Colors.error};
+          border-radius: 5px;
+      `}
     }
   }
 `
 
-Input.propTypes = propTypes
-WrapperInput.defaultProps = defaultProps
+const ErrorMessage = styled.small`
+  & {
+    color: ${Colors.error};
+    text-align: end;
+    padding: 0 5px;
+  }
+`
 
-export default WrapperInput
+Input.propTypes = propTypes
+Input.defaultProps = defaultProps
+
+export default Input

@@ -1,3 +1,7 @@
+# 1.1.11
+
+- Add styles to show errors input feedback. 
+
 # 1.1.10
 
 - Remove paddings horizontal and width auto for button type link
