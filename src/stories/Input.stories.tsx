@@ -8,7 +8,7 @@ export const Basic = () => {
   })
 
   return (
-    <div style={{ width: 300 }}>
+    <div style={{ width: 185 }}>
       <State store={store}>
         <Input onChange={(event) => store.set({ value: event.target.value })} />
       </State>

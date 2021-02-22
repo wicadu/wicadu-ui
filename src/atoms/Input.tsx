@@ -40,22 +40,23 @@ const defaultProps = {
   type: inputType.primary
 }
 
-function Input ({ className, label, name, htmlType, ...props }: Props) {
+function Input ({ label, name, htmlType, ...props }: Props) {
   const { register, errors } = Form.useForm()
 
   return (
-    <div className={className}>
+    <Wrapper {...props} errors={errors}>
       {label && <label htmlFor={name}>{label}</label>}
-      <div>
-        <input {...props} ref={register} id={name} name={name} type={htmlType} />
-        {errors[name]?.message && <span>{errors[name].message}</span>}
-      </div>
-    </div>
+      <input {...props} ref={register} id={name} name={name} type={htmlType} />
+      {errors[name]?.message && <small>{errors[name].message}</small>}
+    </Wrapper>
   )
 }
 
-const WrapperInput = styled(Input)`
+const Wrapper = styled.div`
   & {
+    display: grid;
+    grid-template-rows: 20px 1fr 20px;
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       display: none;
@@ -73,7 +74,7 @@ const WrapperInput = styled(Input)`
     }
 
     input {
-      border-radius: 10px;
+      border-radius: 5px;
       padding: 5px 10px;
 
       ${({ size, fullWidth }) => {
@@ -97,10 +98,23 @@ const WrapperInput = styled(Input)`
         `
       }}
     }
+
+    ${({ errors, name }) => errors?.[name]?.message && `
+        input {
+          border: 1px solid ${Colors.error};
+          border-radius: 5px;
+        }
+
+        small {
+          color: ${Colors.error};
+          text-align: end;
+          padding: 0 5px;
+        }
+    `}
   }
 `
 
 Input.propTypes = propTypes
-WrapperInput.defaultProps = defaultProps
+Input.defaultProps = defaultProps
 
-export default WrapperInput
+export default Input
