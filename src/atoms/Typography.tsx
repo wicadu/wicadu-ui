@@ -45,7 +45,7 @@ function Typography ({ children, type, ...props }: Props) {
     return Default
   }, [type])
 
-  return <Component {...props}>{children}</Component>
+  return <Component type={type} {...props}>{children}</Component>
 }
 
 const defaultStyles = css`
@@ -85,6 +85,10 @@ const Default = styled.p`
   ${defaultStyles}
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
+
+  ${({ type }) => type === 'description' && `
+    color: ${Colors.darkGray};
+  `}
 `
 
 Typography.propTypes = propTypes

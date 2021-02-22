@@ -14,6 +14,7 @@ export const Types = () => (
     <Typography type='title-3'>Title-3: Should be used for a some article headers.</Typography>
     <Typography type='title-4'>Title-4: Should use for unimportant headers.</Typography>
     <Typography>Default: Should use for almost all paragraphs.</Typography>
+    <Typography type='description'>Description: It's like as default but with different color</Typography>
   </>
 )
 

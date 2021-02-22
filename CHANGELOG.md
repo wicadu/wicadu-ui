@@ -1,3 +1,7 @@
+# 1.1.7
+
+- Add description type (Typography).
+
 # 1.1.6
 
 - Add aling and weight (Typography - default)
