@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 import styled from '@emotion/styled'
 
@@ -42,12 +42,13 @@ const defaultProps = {
 
 function Input ({ label, name, htmlType, ...props }: Props) {
   const { register, errors } = Form.useForm()
+  const errorMessage = useMemo(() => errors?.[name]?.message, [errors, name])
 
   return (
-    <Wrapper {...props} errors={errors}>
+    <Wrapper {...props} error={Boolean(errorMessage)}>
       {label && <label htmlFor={name}>{label}</label>}
       <input {...props} ref={register} id={name} name={name} type={htmlType} />
-      {errors[name]?.message && <small>{errors[name].message}</small>}
+       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </Wrapper>
   )
 }
@@ -55,7 +56,6 @@ function Input ({ label, name, htmlType, ...props }: Props) {
 const Wrapper = styled.div`
   & {
     display: grid;
-    grid-template-rows: 20px 1fr 20px;
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -97,20 +97,20 @@ const Wrapper = styled.div`
           border: none;
         `
       }}
-    }
 
-    ${({ errors, name }) => errors?.[name]?.message && `
-        input {
+      ${({ error }) => error && `
           border: 1px solid ${Colors.error};
           border-radius: 5px;
-        }
+      `}
+    }
+  }
+`
 
-        small {
-          color: ${Colors.error};
-          text-align: end;
-          padding: 0 5px;
-        }
-    `}
+const ErrorMessage = styled.small`
+  & {
+    color: ${Colors.error};
+    text-align: end;
+    padding: 0 5px;
   }
 `
 
