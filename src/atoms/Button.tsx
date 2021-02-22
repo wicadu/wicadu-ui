@@ -74,6 +74,21 @@ const WrapperButton = styled(Button)`
     outline: none;
     cursor: pointer;
 
+    ${({ size, fullWidth }) => {
+      if (size === buttonSizes.small) return `
+        height: 35px;
+        width: ${fullWidth ? '100%' : '160px'};
+      `
+      if (size === buttonSizes.medium) return `
+        height: 42px;
+        width: ${fullWidth ? '100%' : '240px'};
+      `
+      if (size === buttonSizes.large) return `
+        height: 50px;
+        width: ${fullWidth ? '100%' : '300px'};
+      `
+    }}
+
     ${({ type, inverse }) => {
       if (type === buttonType.primary) return `
         background-color: ${!inverse ? Colors.primary : 'white'};
@@ -91,21 +106,8 @@ const WrapperButton = styled(Button)`
         border: 0;
         background-color: transparent;
         color: ${Colors.primary};
-      `
-    }}
-
-    ${({ size, fullWidth }) => {
-      if (size === buttonSizes.small) return `
-        height: 35px;
-        width: ${fullWidth ? '100%' : '160px'};
-      `
-      if (size === buttonSizes.medium) return `
-        height: 42px;
-        width: ${fullWidth ? '100%' : '240px'};
-      `
-      if (size === buttonSizes.large) return `
-        height: 50px;
-        width: ${fullWidth ? '100%' : '300px'};
+        padding: 5px 0;
+        width: auto;
       `
     }}
 

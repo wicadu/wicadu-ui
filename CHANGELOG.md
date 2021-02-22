@@ -1,3 +1,7 @@
+# 1.1.10
+
+- Remove paddings horizontal and width auto for button type link
+
 # 1.1.9
 
 - Add cursor pointer (Button).
