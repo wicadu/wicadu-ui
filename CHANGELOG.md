@@ -1,3 +1,7 @@
+# 1.1.9
+
+- Add cursor pointer (Button).
+
 # 1.1.8
 
 - Add new line height for description (Typography).

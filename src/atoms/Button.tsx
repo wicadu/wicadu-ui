@@ -66,13 +66,13 @@ function Button ({ className, children, htmlType, loading, disabled, ...props }:
   )
 }
 
-
 const WrapperButton = styled(Button)`
   & {
     font-family: 'Cabin', sans-serif;
     padding: 5px 20px;
     border-radius: 10px;
     outline: none;
+    cursor: pointer;
 
     ${({ type, inverse }) => {
       if (type === buttonType.primary) return `
