@@ -1,3 +1,7 @@
+# 1.3.0
+
+- Add Theme, useTheme, fonts and move styles.
+
 # 1.2.0
 
 - Add LoadIcon Atom
