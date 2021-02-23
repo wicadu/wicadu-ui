@@ -22,14 +22,11 @@ const propTypes = {
 
 const defaultProps = {
   mode: 'light',
-  colors: {
-    light: Colors,
-    dark: {}
-  }
+  colors: Colors
 }
 
 const Theme = ({ children, colors, mode }) => {
-  const appColors = useMemo(() => colors[mode] || Colors, [colors, mode])
+  const appColors = useMemo(() => colors[mode], [colors, mode])
 
   return (
     <ThemeContext.Provider value={{ colors: appColors, mode }}>
