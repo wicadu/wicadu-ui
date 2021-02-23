@@ -1,3 +1,7 @@
+# 1.2.0
+
+- Add LoadIcon Atom
+
 # 1.1.11
 
 - Add styles to show errors input feedback. 
