@@ -4,6 +4,7 @@ import Button from './atoms/Button'
 import Input from './atoms/Input'
 import Spin from './atoms/Spin'
 import Typography from './atoms/Typography'
+import LoadIcon from './atoms/LoadIcon'
 
 export {
   Form,
@@ -11,5 +12,6 @@ export {
   Button,
   Input,
   Spin,
-  Typography
+  Typography,
+  LoadIcon
 }
