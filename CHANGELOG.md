@@ -1,3 +1,7 @@
+# 1.3.4
+
+- Add command build:assets and fix required assets in publish dependency
+
 # 1.3.0
 
 - Add Theme, useTheme, fonts and move styles.
