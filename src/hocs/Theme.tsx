@@ -1,7 +1,7 @@
-import React, { Fragment, createContext, useMemo, useContext } from 'react'
+import React, { createContext, useMemo, useContext } from 'react'
 import PropTypes from 'prop-types'
 
-import { Global } from '@emotion/react'
+import { Global, ThemeProvider } from '@emotion/react'
 import Colors from '../constants/colors'
 
 import 'flexboxgrid'
@@ -30,11 +30,11 @@ const Theme = ({ children, colors, mode }) => {
 
   return (
     <ThemeContext.Provider value={{ colors: appColors, mode }}>
-      <Fragment>
+      <ThemeProvider theme={appColors}>
         <Global styles={ResetCSS} />
         <Global styles={ClassGlobals} />
         {children}
-      </Fragment>
+      </ThemeProvider>
     </ThemeContext.Provider>
   )
 }
