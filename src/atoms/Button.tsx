@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
+
 import styled from '@emotion/styled'
 
 import Spin from './Spin'
-import Colors from '../constants/colors'
 
 enum htmlType {
   button = 'button',
@@ -24,7 +24,6 @@ enum buttonSizes {
 }
 
 const propTypes = {
-  className: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
   htmlType: PropTypes.oneOf<htmlType>([
@@ -58,11 +57,11 @@ const defaultProps: Props = {
   onClick () {}
 }
 
-function Button ({ className, children, htmlType, loading, disabled, ...props }: Props) {
+function Button ({ children, htmlType, loading, disabled, ...props }: Props) {
   const isDisabled = useMemo(() => loading || disabled, [loading, disabled])
 
   return (
-    <button className={className} {...props} type={htmlType} disabled={isDisabled}>{loading ? <Spin /> : children}</button>
+    <button {...props} type={htmlType} disabled={isDisabled}>{loading ? <Spin /> : children}</button>
   )
 }
 
@@ -89,33 +88,34 @@ const WrapperButton = styled(Button)`
       `
     }}
 
-    ${({ type, inverse }) => {
+    ${({ type, inverse, theme }) => {
+      console.log('theme:', theme)
       if (type === buttonType.primary) return `
-        background-color: ${!inverse ? Colors.primary : 'white'};
-        color: ${!inverse ? 'white': Colors.primary};
-        border: 1px solid ${Colors.primary};
+        background-color: ${!inverse ? theme?.primary : 'white'};
+        color: ${!inverse ? 'white': theme?.primary};
+        border: 1px solid ${theme?.primary};
       `
 
       if (type === buttonType.ghost) return `
-        background-color: ${!inverse ? Colors.darkGray : 'white'};
-        color: ${!inverse ? 'white': Colors.darkGray};
-        border: 1px solid ${Colors.darkGray};
+        background-color: ${!inverse ? theme?.darkGray : 'white'};
+        color: ${!inverse ? 'white': theme?.darkGray};
+        border: 1px solid ${theme?.darkGray};
       `
 
       if (type === buttonType.link) return `
         border: 0;
         background-color: transparent;
-        color: ${Colors.primary};
+        color: ${theme?.primary};
         padding: 5px 0;
         width: auto;
       `
     }}
 
-    ${({ disabled }) =>
+    ${({ disabled, theme }) =>
       disabled && `
-        background-color: ${Colors.lightGray};
-        border: 1px solid ${Colors.primary};
-        color: ${Colors.primary};
+        background-color: ${theme?.lightGray};
+        border: 1px solid ${theme?.primary};
+        color: ${theme?.primary};
       `
     }
   }

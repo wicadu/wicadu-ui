@@ -70,7 +70,7 @@ const Wrapper = styled.div`
 
     textarea:focus, input:focus {
       outline: none;
-      box-shadow: 0 0 1px 1px ${() => Colors.lightGray};
+      box-shadow: 0 0 1px 1px ${({ theme }) => theme.lightGray};
     }
 
     input {
@@ -98,8 +98,8 @@ const Wrapper = styled.div`
         `
       }}
 
-      ${({ error }) => error && `
-          border: 1px solid ${Colors.error};
+      ${({ error, theme }) => error && `
+          border: 1px solid ${theme.error};
           border-radius: 5px;
       `}
     }
@@ -108,7 +108,7 @@ const Wrapper = styled.div`
 
 const ErrorMessage = styled.small`
   & {
-    color: ${Colors.error};
+    color: ${({ theme }) => theme.error};
     text-align: end;
     padding: 0 5px;
   }
