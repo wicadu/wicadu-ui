@@ -89,23 +89,22 @@ const WrapperButton = styled(Button)`
     }}
 
     ${({ type, inverse, theme }) => {
-      console.log('theme:', theme)
       if (type === buttonType.primary) return `
-        background-color: ${!inverse ? theme?.primary : 'white'};
-        color: ${!inverse ? 'white': theme?.primary};
-        border: 1px solid ${theme?.primary};
+        background-color: ${!inverse ? theme.colors.primary : 'white'};
+        color: ${!inverse ? 'white': theme.colors.primary};
+        border: 1px solid ${theme.colors.primary};
       `
 
       if (type === buttonType.ghost) return `
-        background-color: ${!inverse ? theme?.darkGray : 'white'};
-        color: ${!inverse ? 'white': theme?.darkGray};
-        border: 1px solid ${theme?.darkGray};
+        background-color: ${!inverse ? theme.colors.darkGray : 'white'};
+        color: ${!inverse ? 'white': theme.colors.darkGray};
+        border: 1px solid ${theme.colors.darkGray};
       `
 
       if (type === buttonType.link) return `
         border: 0;
         background-color: transparent;
-        color: ${theme?.primary};
+        color: ${theme.colors.primary};
         padding: 5px 0;
         width: auto;
       `
@@ -113,9 +112,9 @@ const WrapperButton = styled(Button)`
 
     ${({ disabled, theme }) =>
       disabled && `
-        background-color: ${theme?.lightGray};
-        border: 1px solid ${theme?.primary};
-        color: ${theme?.primary};
+        background-color: ${theme.colors.lightGray};
+        border: 1px solid ${theme.colors.primary};
+        color: ${theme.colors.primary};
       `
     }
   }

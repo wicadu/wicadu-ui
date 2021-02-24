@@ -56,14 +56,14 @@ const defaultStyles = css`
 
 const Title = styled.h1`
   ${defaultStyles}
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.colors.black};
   font-size: 26px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
 `
 const Title2 = styled.h2`
   ${defaultStyles}
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.colors.black};
   font-size: 24px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
@@ -71,7 +71,7 @@ const Title2 = styled.h2`
 `
 const Title3 = styled.h3`
   ${defaultStyles}
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.colors.black};
   font-size: 22px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
@@ -79,7 +79,7 @@ const Title3 = styled.h3`
 `
 const Title4 = styled.h4`
   ${defaultStyles}
-  color: ${({ theme }) => theme.black};
+  color: ${({ theme }) => theme.colors.black};
   font-size: 20px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
@@ -90,7 +90,7 @@ const Default = styled.p`
   font-weight: ${({ weight }) => weight};
 
   ${({ type, theme }) => type === 'description' && `
-    color: ${theme.darkGray};
+    color: ${theme.colors.darkGray};
     line-height: 1.30rem;
   `}
 `
