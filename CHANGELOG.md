@@ -1,3 +1,7 @@
+# 1.3.6
+
+- Spread props and export LoadIcon. 
+
 # 1.3.4
 
 - Add command build:assets and fix required assets in publish dependency

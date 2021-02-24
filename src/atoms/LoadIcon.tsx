@@ -16,9 +16,10 @@ const defaultProps = {
 
 type Props = InferProps<typeof propTypes>
 
-const LoadIcon = ({ size, color, icon }: Props) => {
+const LoadIcon = ({ size, color, icon, ...props }: Props) => {
   return (
     <Icon
+      {...props}
       className={icon}
       size={size}
       color={color}
