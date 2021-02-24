@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Typography from '../atoms/Typography'
 import Theme from '../hocs/Theme'
+import Typography from '../atoms/Typography'
 
 export const Basic = () => (
   <Theme>
