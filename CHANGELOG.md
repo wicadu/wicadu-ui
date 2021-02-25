@@ -1,3 +1,7 @@
+# 1.3.8
+
+- Export addClass utils
+
 # 1.3.7
 
 - Add dynamic background color.
