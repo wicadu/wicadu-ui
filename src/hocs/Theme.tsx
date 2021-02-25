@@ -1,7 +1,7 @@
-import React, { createContext, useMemo, useContext } from 'react'
+import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 
-import { Global, ThemeProvider } from '@emotion/react'
+import { Global, ThemeProvider, css } from '@emotion/react'
 import Colors from '../constants/colors'
 
 import 'flexboxgrid'
@@ -28,6 +28,11 @@ const Theme = ({ children, colors, mode }) => {
 
   return (
     <ThemeProvider theme={{ colors: appColors, mode }}>
+      <Global styles={css`
+        html, body {
+          background: ${appColors?.white};
+        }
+      `} />
       <Global styles={ResetCSS} />
       <Global styles={ClassGlobals} />
       {children}

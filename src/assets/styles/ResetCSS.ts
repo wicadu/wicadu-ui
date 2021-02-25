@@ -62,7 +62,6 @@ const ResetCSS = css`
 
   html,
   body {
-    background: #f3f6f8;
     font-family: 'Cabin', sans-serif;
   }
 

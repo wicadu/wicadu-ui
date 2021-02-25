@@ -1,3 +1,7 @@
+# 1.3.7
+
+- Add dynamic background color.
+
 # 1.3.6
 
 - Spread props and export LoadIcon. 
