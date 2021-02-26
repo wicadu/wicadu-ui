@@ -69,7 +69,10 @@ const Wrapper = styled.div`
 
     textarea:focus, input:focus {
       outline: none;
-      box-shadow: 0 0 1px 1px ${({ theme }) => theme.colors.lightGray};
+      box-shadow: ${({ theme, error }) => error
+        ? 'none'
+        : `0 0 1px 1px ${theme.colors.lightGray}`
+      };
     }
 
     input {
