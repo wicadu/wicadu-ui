@@ -1,3 +1,7 @@
+# 1.3.9
+
+- Fix button loading size and center and fix input shadow.
+
 # 1.3.8
 
 - Export addClass utils

@@ -35,6 +35,20 @@ export const Inverse = () => (
   </Theme>
 )
 
+export const Loading = () => (
+  <Theme>
+    <div style={{ marginBottom: 10 }}>
+      <Button loading>Is this default size</Button>
+    </div>
+    <div style={{ marginBottom: 10 }}>
+      <Button loading size='medium'>Is this medium size</Button>
+    </div>
+    <div style={{ marginBottom: 10 }}>
+      <Button loading size='large'>Is this large size</Button>
+    </div>
+  </Theme>
+)
+
 
 export default {
   title: 'Button',

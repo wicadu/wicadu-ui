@@ -73,6 +73,17 @@ const WrapperButton = styled(Button)`
     outline: none;
     cursor: pointer;
 
+    ${({ loading }) => loading && `
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > div {
+        width: 18px;
+        height: 18px;
+      }
+    `}
+
     ${({ size, fullWidth }) => {
       if (size === buttonSizes.small) return `
         height: 35px;
