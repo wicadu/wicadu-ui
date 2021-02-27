@@ -6,6 +6,7 @@ import Spin from './atoms/Spin'
 import Typography from './atoms/Typography'
 import LoadIcon from './atoms/LoadIcon'
 import addClass from './utils/addClass'
+import matchGraphQLErrors from './utils/matchGraphQLErrors'
 
 export {
   Form,
@@ -15,5 +16,6 @@ export {
   Spin,
   Typography,
   LoadIcon,
-  addClass
+  addClass,
+  matchGraphQLErrors
 }

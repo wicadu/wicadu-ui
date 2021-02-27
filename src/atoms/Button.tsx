@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 
 import styled from '@emotion/styled'
+import { useTheme } from '@emotion/react'
 
 import Spin from './Spin'
 
@@ -57,11 +58,19 @@ const defaultProps: Props = {
   onClick () {}
 }
 
-function Button ({ children, htmlType, loading, disabled, ...props }: Props) {
+function Button ({ children, htmlType, loading, disabled, inverse, type, ...props }: Props) {
+  const { colors } = useTheme()
+
   const isDisabled = useMemo(() => loading || disabled, [loading, disabled])
+  const spinnerColor = useMemo(() => ({
+    primary: inverse ? 'primary' : 'white',
+    ghost: inverse ? 'darkGray' : 'white'
+  }), [colors, type, inverse])
 
   return (
-    <button {...props} type={htmlType} disabled={isDisabled}>{loading ? <Spin /> : children}</button>
+    <button {...props} type={htmlType} disabled={isDisabled}>
+      {loading ? <Spin color={colors[spinnerColor[type]]} /> : children}
+    </button>
   )
 }
 
@@ -100,22 +109,24 @@ const WrapperButton = styled(Button)`
     }}
 
     ${({ type, inverse, theme }) => {
+      const { colors } = theme
+
       if (type === buttonType.primary) return `
-        background-color: ${!inverse ? theme.colors.primary : 'white'};
-        color: ${!inverse ? 'white': theme.colors.primary};
-        border: 1px solid ${theme.colors.primary};
+        background-color: ${inverse ? colors.white : colors.primary};
+        color: ${inverse ? colors.primary : colors.white};
+        border: 1px solid ${colors.primary};
       `
 
       if (type === buttonType.ghost) return `
-        background-color: ${!inverse ? theme.colors.darkGray : 'white'};
-        color: ${!inverse ? 'white': theme.colors.darkGray};
-        border: 1px solid ${theme.colors.darkGray};
+        background-color: ${inverse ? colors.white : colors.darkGray};
+        color: ${inverse ? colors.darkGray : colors.white};
+        border: 1px solid ${colors.darkGray};
       `
 
       if (type === buttonType.link) return `
         border: 0;
         background-color: transparent;
-        color: ${theme.colors.primary};
+        color: ${colors.primary};
         padding: 5px 0;
         width: auto;
       `
