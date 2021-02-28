@@ -1,6 +1,8 @@
-# 1.3.10
-
+# 1.3.11
 - Remove useMemo for calculate `errors[name]?.message`
+
+# 1.3.10
+- Add util matchGraphQLErrors and fix color loading button
 
 # 1.3.9
 
