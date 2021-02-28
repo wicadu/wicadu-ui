@@ -1,3 +1,7 @@
+# 1.3.10
+
+- Remove useMemo for calculate `errors[name]?.message`
+
 # 1.3.9
 
 - Fix button loading size and center and fix input shadow.
