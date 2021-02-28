@@ -46,7 +46,8 @@ const propTypes = {
   disabled: PropTypes.bool,
   asTextLink: PropTypes.bool,
   inverse: PropTypes.bool,
-  fullWidth: PropTypes.bool
+  fullWidth: PropTypes.bool,
+  underline: PropTypes.bool
 }
 
 type Props = InferProps<typeof propTypes>
@@ -61,7 +62,9 @@ const defaultProps: Props = {
 function Button ({ children, htmlType, loading, disabled, inverse, type, ...props }: Props) {
   const { colors } = useTheme()
 
+  const isLoadingWithSpin = useMemo(() => loading && type !== buttonType.link, [loading, type, buttonType])
   const isDisabled = useMemo(() => loading || disabled, [loading, disabled])
+
   const spinnerColor = useMemo(() => ({
     primary: inverse ? 'primary' : 'white',
     ghost: inverse ? 'darkGray' : 'white'
@@ -69,7 +72,7 @@ function Button ({ children, htmlType, loading, disabled, inverse, type, ...prop
 
   return (
     <button {...props} type={htmlType} disabled={isDisabled}>
-      {loading ? <Spin color={colors[spinnerColor[type]]} /> : children}
+      {isLoadingWithSpin ? <Spin color={colors[spinnerColor[type]]} /> : children}
     </button>
   )
 }
@@ -108,7 +111,7 @@ const WrapperButton = styled(Button)`
       `
     }}
 
-    ${({ type, inverse, theme }) => {
+    ${({ type, inverse, underline, theme }) => {
       const { colors } = theme
 
       if (type === buttonType.primary) return `
@@ -129,16 +132,24 @@ const WrapperButton = styled(Button)`
         color: ${colors.primary};
         padding: 5px 0;
         width: auto;
+        text-decoration: ${underline ?  'underline' : 'none'};
       `
     }}
 
-    ${({ disabled, theme }) =>
-      disabled && `
-        background-color: ${theme.colors.lightGray};
-        border: 1px solid ${theme.colors.primary};
-        color: ${theme.colors.primary};
+    ${({ disabled, type, loading, theme }) => {
+      const { colors } = theme
+
+      if (disabled || loading && type === buttonType.link) return `
+        text-decoration: underline;
+        color: ${colors.darkGray};
       `
-    }
+
+      if (disabled) return `
+        background-color: ${colors.lightGray};
+        border: 1px solid ${colors.primary};
+        color: ${colors.primary};
+      `
+    }}
   }
 `
 
