@@ -1,8 +1,7 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import PropTypes, { InferProps } from 'prop-types'
-import styled from '@emotion/styled'
-
 import Form from '../hocs/Form'
+import styled from '@emotion/styled'
 
 enum inputType {
   primary = 'primary',
@@ -41,13 +40,13 @@ const defaultProps = {
 
 function Input ({ label, name, htmlType, ...props }: Props) {
   const { register, errors } = Form.useForm()
-  const errorMessage = useMemo(() => errors?.[name]?.message, [errors, name])
+  const errorMessage = errors[name]?.message
 
   return (
     <Wrapper {...props} error={Boolean(errorMessage)}>
       {label && <label htmlFor={name}>{label}</label>}
       <input {...props} ref={register} id={name} name={name} type={htmlType} />
-       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </Wrapper>
   )
 }
