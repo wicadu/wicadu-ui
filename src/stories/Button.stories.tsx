@@ -82,12 +82,15 @@ export const Loading = () => (
     </Group>
 
     <Group>
-      <p>Colors: </p>
+      <p>Types: </p>
       <GroupItem>
         <Button loading />
       </GroupItem>
       <GroupItem>
         <Button loading type='ghost' />
+      </GroupItem>
+      <GroupItem>
+        <Button loading type='link' size='medium' />
       </GroupItem>
     </Group>
 

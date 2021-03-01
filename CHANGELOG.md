@@ -1,3 +1,6 @@
+
+# 1.3.12
+- Add Spin to Link Button
 # 1.3.11
 - Remove useMemo for calculate `errors[name]?.message`
 
