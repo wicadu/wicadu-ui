@@ -62,17 +62,16 @@ const defaultProps: Props = {
 function Button ({ children, htmlType, loading, disabled, inverse, type, ...props }: Props) {
   const { colors } = useTheme()
 
-  const isLoadingWithSpin = useMemo(() => loading && type !== buttonType.link, [loading, type, buttonType])
   const isDisabled = useMemo(() => loading || disabled, [loading, disabled])
-
   const spinnerColor = useMemo(() => ({
     primary: inverse ? 'primary' : 'white',
-    ghost: inverse ? 'darkGray' : 'white'
+    ghost: inverse ? 'darkGray' : 'white',
+    link: 'primary',
   }), [colors, type, inverse])
 
   return (
     <button {...props} type={htmlType} disabled={isDisabled}>
-      {isLoadingWithSpin ? <Spin color={colors[spinnerColor[type]]} /> : children}
+      {loading ? <Spin color={colors[spinnerColor[type]]} /> : children}
     </button>
   )
 }
@@ -136,11 +135,10 @@ const WrapperButton = styled(Button)`
       `
     }}
 
-    ${({ disabled, type, loading, theme }) => {
+    ${({ disabled, type, theme }) => {
       const { colors } = theme
 
-      if (disabled || loading && type === buttonType.link) return `
-        text-decoration: underline;
+      if (disabled && type === buttonType.link) return `
         color: ${colors.darkGray};
       `
 
