@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 
-import { Global, ThemeProvider, css } from '@emotion/react'
+import { Global, ThemeProvider, css, useTheme } from '@emotion/react'
 import Colors from '../constants/colors'
 
 import 'flexboxgrid'
@@ -42,5 +42,7 @@ const Theme = ({ children, colors, mode }) => {
 
 Theme.propTypes = propTypes
 Theme.defaultProps = defaultProps
+
+Theme.useTheme = useTheme
 
 export default Theme
