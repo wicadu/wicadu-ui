@@ -1,5 +1,5 @@
 import Form from './hocs/Form'
-import Theme from './hocs/Theme'
+import ThemeProvider from './hocs/ThemeProvider'
 import Button from './atoms/Button'
 import Input from './atoms/Input'
 import Spin from './atoms/Spin'
@@ -10,7 +10,7 @@ import matchGraphQLErrors from './utils/matchGraphQLErrors'
 
 export {
   Form,
-  Theme,
+  ThemeProvider,
   Button,
   Input,
   Spin,

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-const ClassGlobals = css`
+const FlexboxgridGlobalsClass = css`
   .w-100 {
     width: 100%;
   }
@@ -10,4 +10,4 @@ const ClassGlobals = css`
   }
 `
 
-export default ClassGlobals
+export default FlexboxgridGlobalsClass

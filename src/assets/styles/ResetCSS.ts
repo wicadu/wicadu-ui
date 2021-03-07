@@ -1,8 +1,6 @@
 import { css } from '@emotion/react'
 
 const ResetCSS = css`
-  @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
   html, body,
   div,
   span,
