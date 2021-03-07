@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
-import { Global, ThemeProvider, css, useTheme } from '@emotion/react'
+import { Global, ThemeProvider, css } from '@emotion/react'
 import ResetCSS from '../assets/styles/ResetCSS'
 import FlexboxgridGlobalsClass from '../assets/styles/FlexboxgridGlobalsClass'
 import '../assets/fontawesome/all.min.css'
@@ -47,7 +47,5 @@ function WrapperThemeProvider ({ children, colors, mode }) {
 
 WrapperThemeProvider.propTypes = propTypes
 WrapperThemeProvider.defaultProps = defaultProps
-
-WrapperThemeProvider.useTheme = useTheme
 
 export default WrapperThemeProvider

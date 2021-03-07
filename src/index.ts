@@ -1,5 +1,6 @@
 import Form from './hocs/Form'
 import ThemeProvider from './hocs/ThemeProvider'
+import { useTheme } from '@emotion/react'
 import Button from './atoms/Button'
 import Input from './atoms/Input'
 import Spin from './atoms/Spin'
@@ -11,6 +12,7 @@ import matchGraphQLErrors from './utils/matchGraphQLErrors'
 export {
   Form,
   ThemeProvider,
+  useTheme,
   Button,
   Input,
   Spin,
