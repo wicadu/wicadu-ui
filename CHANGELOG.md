@@ -1,6 +1,10 @@
 
+# 1.4.0
+Change name of IconLoad to Icon and export useTheme from Index
+
 # 1.3.12
 - Add Spin to Link Button
+
 # 1.3.11
 - Remove useMemo for calculate `errors[name]?.message`
 
