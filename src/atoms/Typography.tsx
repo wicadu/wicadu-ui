@@ -24,7 +24,8 @@ const propTypes = {
     htmlType.description
   ]),
   align: PropTypes.oneOf(['left', 'center', 'right']),
-  weight: PropTypes.oneOf([100, 300, 400, 600, 700])
+  weight: PropTypes.oneOf([100, 300, 400, 600, 700]),
+  size: PropTypes.number
 }
 
 type Props = InferProps<typeof propTypes>
@@ -49,22 +50,21 @@ function Typography ({ children, type, ...props }: Props) {
 }
 
 const defaultStyles = css`
-  line-height: 1.60rem;
-  margin: 0px;
-  padding: 0px;
+  line-height: 3rem;
+  margin-bottom: 10px;
 `
 
 const Title = styled.h1`
   ${defaultStyles}
   color: ${({ theme }) => theme.colors.black};
-  font-size: 26px;
+  font-size: ${({ size }) => size || 46}px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
 `
 const Title2 = styled.h2`
   ${defaultStyles}
   color: ${({ theme }) => theme.colors.black};
-  font-size: 24px;
+  font-size: ${({ size }) => size || 38}px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
 
@@ -72,7 +72,7 @@ const Title2 = styled.h2`
 const Title3 = styled.h3`
   ${defaultStyles}
   color: ${({ theme }) => theme.colors.black};
-  font-size: 22px;
+  font-size: ${({ size }) => size || 26}px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
 
@@ -80,7 +80,7 @@ const Title3 = styled.h3`
 const Title4 = styled.h4`
   ${defaultStyles}
   color: ${({ theme }) => theme.colors.black};
-  font-size: 20px;
+  font-size: ${({ size }) => size || 20}px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
 `
@@ -88,6 +88,7 @@ const Default = styled.p`
   ${defaultStyles}
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
+  font-size: ${({ size }) => size || 18}px;
 
   ${({ type, theme }) => type === 'description' && `
     color: ${theme.colors.darkGray};
