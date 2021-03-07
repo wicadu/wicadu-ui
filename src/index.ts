@@ -5,7 +5,7 @@ import Button from './atoms/Button'
 import Input from './atoms/Input'
 import Spin from './atoms/Spin'
 import Typography from './atoms/Typography'
-import LoadIcon from './atoms/LoadIcon'
+import Icon from './atoms/Icon'
 import addClass from './utils/addClass'
 import matchGraphQLErrors from './utils/matchGraphQLErrors'
 
@@ -17,7 +17,7 @@ export {
   Input,
   Spin,
   Typography,
-  LoadIcon,
+  Icon,
   addClass,
   matchGraphQLErrors
 }
