@@ -25,7 +25,8 @@ const propTypes = {
   ]),
   align: PropTypes.oneOf(['left', 'center', 'right']),
   weight: PropTypes.oneOf([100, 300, 400, 600, 700]),
-  size: PropTypes.number
+  size: PropTypes.number,
+  inverse: PropTypes.bool
 }
 
 type Props = InferProps<typeof propTypes>
@@ -56,14 +57,14 @@ const defaultStyles = css`
 
 const Title = styled.h1`
   ${defaultStyles}
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
   font-size: ${({ size }) => size || 46}px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
 `
 const Title2 = styled.h2`
   ${defaultStyles}
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
   font-size: ${({ size }) => size || 38}px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
@@ -71,7 +72,7 @@ const Title2 = styled.h2`
 `
 const Title3 = styled.h3`
   ${defaultStyles}
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
   font-size: ${({ size }) => size || 26}px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
@@ -79,7 +80,7 @@ const Title3 = styled.h3`
 `
 const Title4 = styled.h4`
   ${defaultStyles}
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
   font-size: ${({ size }) => size || 20}px;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
@@ -90,8 +91,8 @@ const Default = styled.p`
   font-weight: ${({ weight }) => weight};
   font-size: ${({ size }) => size || 18}px;
 
-  ${({ type, theme }) => type === 'description' && `
-    color: ${theme.colors.darkGray};
+  ${({ type, theme, inverse }) => type === 'description' && `
+    color: ${inverse ? theme.colors.darkGray : theme.colors.lightGray};
     line-height: 1.30rem;
   `}
 `
