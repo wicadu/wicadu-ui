@@ -87,14 +87,20 @@ const Title4 = styled.h4`
 `
 const Default = styled.p`
   ${defaultStyles}
+  line-height: 1.30rem;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
   font-size: ${({ size }) => size || 18}px;
+  
+  ${({ type, theme, inverse }) => {
+    const { colors } = theme || {}
 
-  ${({ type, theme, inverse }) => type === 'description' && `
-    color: ${inverse ? theme.colors.darkGray : theme.colors.lightGray};
-    line-height: 1.30rem;
-  `}
+    if (type === 'description') {
+      return `color: ${inverse ? colors.darkGray : colors.lightGray};`
+    }
+
+    return `color: ${inverse ? colors.white : colors.black};`
+  }}
 `
 
 Typography.propTypes = propTypes

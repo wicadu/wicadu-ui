@@ -12,12 +12,13 @@ const propTypes = {
   extraSpaceBetween: PropTypes.number,
   width: PropTypes.number,
   minHeight: PropTypes.number,
-  maxHeight: PropTypes.number
+  maxHeight: PropTypes.number,
+  id: PropTypes.string.isRequired
 }
 
 type Props = InferProps<typeof propTypes>
 
-function Popover ({ children, content, extraSpaceBetween, ...props }: Props) {
+function Popover ({ children, id, content, extraSpaceBetween, ...props }: Props) {
   const [isShow, setShow] = useState<boolean>(false)
 
   const [contentHeight, setContentHeight] = useState<number>(0)
@@ -33,7 +34,7 @@ function Popover ({ children, content, extraSpaceBetween, ...props }: Props) {
   useOutsideClick(referrence, toggleVisibilityHandle, isShow)
 
   useEffect(() => {
-    const wrapperContent = document.getElementById('wrapper-content-popover')
+    const wrapperContent = document.getElementById(id)
 
     setContentHeight(wrapperContent?.clientHeight)
     setContentWidth(wrapperContent?.clientWidth)
@@ -49,7 +50,7 @@ function Popover ({ children, content, extraSpaceBetween, ...props }: Props) {
           {...props}
           currentHeight={contentHeight + extraSpaceBetween}
           currentWidth={contentWidth}
-          id='wrapper-content-popover'
+          id={id}
         >
           {content}
         </WrapperContentPopover>
@@ -63,7 +64,7 @@ export const WrapperContentPopover = styled.div`
   padding: 10px 15px;
   z-index: ${({ elevation }) => elevation};
   background-color: white;
-  filter: drop-shadow(0px 6px 9px rgba(0,0,0,.34));
+  filter: drop-shadow(0px 6px 9px rgba(0,0,0,.2));
   border-radius: 8px;
   overflow: auto;
   overflow-x: hidden;
@@ -91,7 +92,7 @@ export const WrapperContentPopover = styled.div`
   ${({ position, currentHeight, currentWidth }) => {
 
     if (position === 'bottom') {
-      return `bottom: -${currentHeight}px; left: -${currentWidth/6.5}px;`
+      return `bottom: -${currentHeight}px; right: -${currentWidth/6.5}px;`
     }
 
     return ''
