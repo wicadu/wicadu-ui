@@ -3,6 +3,7 @@ import Input from './atoms/Input'
 import Spin from './atoms/Spin'
 import Typography from './atoms/Typography'
 import Icon from './atoms/Icon'
+import Notification from './atoms/Notification'
 
 import Popover from './molecule/Popover'
 
@@ -21,6 +22,7 @@ export {
   Spin,
   Typography,
   Icon,
+  Notification,
   Popover,
   Form,
   ThemeProvider,

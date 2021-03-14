@@ -1,3 +1,7 @@
+# 1.6.0
+
+- Add Notification atom.
+
 # 1.5.0
 
 - Add useOutsideClick (Hook) and Popover (Molecule).
