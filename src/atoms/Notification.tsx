@@ -1,11 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import styled from '@emotion/styled'
 import Icon from './Icon'
 
-function Notification () {
+const propTypes = {
+  handleClick: PropTypes.func
+}
+
+function Notification ({ handleClick }) {
   return (
-    <Wrapper>
+    <Wrapper onClick={handleClick}>
       <Icon name='far fa-bell' />        
     </Wrapper>
   )
@@ -25,5 +30,7 @@ const Wrapper = styled.div`
     background-color: ${({ theme}) => theme.colors.white}
   }
 `
+
+Notification.propTypes = propTypes
 
 export default Notification

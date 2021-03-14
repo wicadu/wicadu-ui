@@ -25,8 +25,6 @@ function Popover ({ children, id, content, extraSpaceBetween, ...props }: Props)
   const [contentWidth, setContentWidth] = useState<number>(0)
 
   const toggleVisibilityHandle = useCallback(() => {
-    console.log(!isShow)
-
     setShow(!isShow)
   }, [isShow, setShow])
 
@@ -38,7 +36,7 @@ function Popover ({ children, id, content, extraSpaceBetween, ...props }: Props)
 
     setContentHeight(wrapperContent?.clientHeight)
     setContentWidth(wrapperContent?.clientWidth)
-  }, [isShow])
+  }, [isShow, id])
 
   useEffect(() => {})
 
