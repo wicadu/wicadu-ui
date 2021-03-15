@@ -9,6 +9,7 @@ import Popover from './molecule/Popover'
 
 import Form from './hocs/Form'
 import ThemeProvider from './hocs/ThemeProvider'
+import Container from './hocs/Container'
 
 import { useTheme } from '@emotion/react'
 import useOutsideClick from './hooks/useOutsideClick'
@@ -27,6 +28,7 @@ export {
   Form,
   ThemeProvider,
   useTheme,
+  Container,
   useOutsideClick,
   addClass,
   matchGraphQLErrors
