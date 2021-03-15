@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
-
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
@@ -33,7 +32,6 @@ type Props = InferProps<typeof propTypes>
 
 const defaultProps: Props = {
   type: htmlType.default,
-  weight: 400,
   align: 'left'
 }
 
@@ -51,7 +49,6 @@ function Typography ({ children, type, ...props }: Props) {
 }
 
 const defaultStyles = css`
-  line-height: 3rem;
   margin-bottom: 10px;
 `
 
@@ -60,14 +57,14 @@ const Title = styled.h1`
   color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
   font-size: ${({ size }) => size || 46}px;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 700};
 `
 const Title2 = styled.h2`
   ${defaultStyles}
   color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
   font-size: ${({ size }) => size || 38}px;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 700};
 
 `
 const Title3 = styled.h3`
@@ -75,7 +72,7 @@ const Title3 = styled.h3`
   color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
   font-size: ${({ size }) => size || 26}px;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 700};
 
 `
 const Title4 = styled.h4`
@@ -83,15 +80,15 @@ const Title4 = styled.h4`
   color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
   font-size: ${({ size }) => size || 20}px;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 700};
 `
 const Default = styled.p`
   ${defaultStyles}
   line-height: 1.30rem;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 400};
   font-size: ${({ size }) => size || 18}px;
-  
+
   ${({ type, theme, inverse }) => {
     const { colors } = theme || {}
 
