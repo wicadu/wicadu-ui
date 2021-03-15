@@ -55,22 +55,21 @@ const defaultStyles = css`
 const Title = styled.h1`
   ${defaultStyles}
   color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
-  font-size: ${({ size }) => size || 46}px;
+  font-size: ${({ size }) => size || 2}em;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight || 700};
 `
 const Title2 = styled.h2`
   ${defaultStyles}
   color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
-  font-size: ${({ size }) => size || 38}px;
+  font-size: ${({ size }) => size || 1.8}em;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight || 700};
-
 `
 const Title3 = styled.h3`
   ${defaultStyles}
   color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
-  font-size: ${({ size }) => size || 26}px;
+  font-size: ${({ size }) => size || 26}em;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight || 700};
 
@@ -78,7 +77,7 @@ const Title3 = styled.h3`
 const Title4 = styled.h4`
   ${defaultStyles}
   color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
-  font-size: ${({ size }) => size || 20}px;
+  font-size: ${({ size }) => size || 20}em;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight || 700};
 `
@@ -87,7 +86,7 @@ const Default = styled.p`
   line-height: 1.30rem;
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight || 400};
-  font-size: ${({ size }) => size || 18}px;
+  font-size: ${({ size }) => size || 18}em;
 
   ${({ type, theme, inverse }) => {
     const { colors } = theme || {}
