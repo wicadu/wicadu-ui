@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import PropTypes, { InferProps } from 'prop-types'
-
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
@@ -25,14 +24,14 @@ const propTypes = {
   ]),
   align: PropTypes.oneOf(['left', 'center', 'right']),
   weight: PropTypes.oneOf([100, 300, 400, 600, 700]),
-  size: PropTypes.number
+  size: PropTypes.number,
+  inverse: PropTypes.bool
 }
 
 type Props = InferProps<typeof propTypes>
 
 const defaultProps: Props = {
   type: htmlType.default,
-  weight: 400,
   align: 'left'
 }
 
@@ -50,50 +49,54 @@ function Typography ({ children, type, ...props }: Props) {
 }
 
 const defaultStyles = css`
-  line-height: 3rem;
   margin-bottom: 10px;
 `
 
 const Title = styled.h1`
   ${defaultStyles}
-  color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ size }) => size || 46}px;
+  color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
+  font-size: ${({ size }) => size || 2}em;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 700};
 `
 const Title2 = styled.h2`
   ${defaultStyles}
-  color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ size }) => size || 38}px;
+  color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
+  font-size: ${({ size }) => size || 1.8}em;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
-
+  font-weight: ${({ weight }) => weight || 700};
 `
 const Title3 = styled.h3`
   ${defaultStyles}
-  color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ size }) => size || 26}px;
+  color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
+  font-size: ${({ size }) => size || 26}em;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 700};
 
 `
 const Title4 = styled.h4`
   ${defaultStyles}
-  color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ size }) => size || 20}px;
+  color: ${({ theme, inverse }) => inverse ? theme.colors.white : theme.colors.black};
+  font-size: ${({ size }) => size || 20}em;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 700};
 `
 const Default = styled.p`
   ${defaultStyles}
+  line-height: 1.30rem;
   text-align: ${({ align }) => align};
-  font-weight: ${({ weight }) => weight};
-  font-size: ${({ size }) => size || 18}px;
+  font-weight: ${({ weight }) => weight || 400};
+  font-size: ${({ size }) => size || 18}em;
 
-  ${({ type, theme }) => type === 'description' && `
-    color: ${theme.colors.darkGray};
-    line-height: 1.30rem;
-  `}
+  ${({ type, theme, inverse }) => {
+    const { colors } = theme || {}
+
+    if (type === 'description') {
+      return `color: ${inverse ? colors.darkGray : colors.lightGray};`
+    }
+
+    return `color: ${inverse ? colors.white : colors.black};`
+  }}
 `
 
 Typography.propTypes = propTypes

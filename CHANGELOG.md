@@ -1,5 +1,13 @@
+# 1.6.0
+
+- Add Notification atom.
+
+# 1.5.0
+
+- Add useOutsideClick (Hook) and Popover (Molecule).
 
 # 1.4.0
+
 Change name of IconLoad to Icon and export useTheme from Index
 
 # 1.3.12
