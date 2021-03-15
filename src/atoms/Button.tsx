@@ -79,6 +79,8 @@ function Button ({ children, htmlType, loading, disabled, inverse, type, ...prop
 const WrapperButton = styled(Button)`
   & {
     font-family: 'Cabin', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
     padding: 5px 20px;
     border-radius: 10px;
     outline: none;
@@ -97,16 +99,17 @@ const WrapperButton = styled(Button)`
 
     ${({ size, fullWidth }) => {
       if (size === buttonSizes.small) return `
-        height: 35px;
         width: ${fullWidth ? '100%' : '160px'};
+        height: 35px;
       `
       if (size === buttonSizes.medium) return `
-        height: 42px;
         width: ${fullWidth ? '100%' : '240px'};
+        height: 42px;
       `
       if (size === buttonSizes.large) return `
-        height: 50px;
         width: ${fullWidth ? '100%' : '300px'};
+        height: 50px;
+        font-size: 18px;
       `
     }}
 
