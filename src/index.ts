@@ -15,6 +15,8 @@ import { useTheme } from '@emotion/react'
 import useOutsideClick from './hooks/useOutsideClick'
 
 import addClass from './utils/addClass'
+import isRunValid from './utils/isRunValid'
+import formatRut from './utils/formatRut'
 import matchGraphQLErrors from './utils/matchGraphQLErrors'
 
 export {
@@ -31,5 +33,7 @@ export {
   Container,
   useOutsideClick,
   addClass,
+  isRunValid,
+  formatRut,
   matchGraphQLErrors
 }
