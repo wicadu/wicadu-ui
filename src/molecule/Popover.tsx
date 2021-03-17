@@ -63,7 +63,7 @@ export const WrapperContentPopover = styled.div`
   z-index: ${({ elevation }) => elevation};
   background-color: white;
   filter: drop-shadow(0px 6px 9px rgba(0,0,0,.2));
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: auto;
   overflow-x: hidden;
   overflow-y: auto;
