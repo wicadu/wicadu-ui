@@ -79,8 +79,7 @@ function Button ({ children, htmlType, loading, disabled, inverse, type, ...prop
 const WrapperButton = styled(Button)`
   & {
     font-family: 'Cabin', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     padding: 5px 20px;
     border-radius: 10px;
     outline: none;
