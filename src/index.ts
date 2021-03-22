@@ -14,9 +14,6 @@ import Container from './hocs/Container'
 import { useTheme } from '@emotion/react'
 import useOutsideClick from './hooks/useOutsideClick'
 
-import addClass from './utils/addClass'
-import matchGraphQLErrors from './utils/matchGraphQLErrors'
-
 export {
   Button,
   Input,
@@ -30,6 +27,4 @@ export {
   useTheme,
   Container,
   useOutsideClick,
-  addClass,
-  matchGraphQLErrors
 }

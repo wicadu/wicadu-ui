@@ -1,3 +1,7 @@
+# 1.6.1
+
+- Move all utils to @wicadu/utils.
+
 # 1.6.0
 
 - Add Notification atom.
